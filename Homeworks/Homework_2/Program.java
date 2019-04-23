@@ -1,26 +1,27 @@
 class Program {
 	public static void main(String[] args){
-		int x5000, x2000, x1000, x500, x200, x100, x50, x10, x5, x2;
+		int x5 = 5000; int x2 = 2000; int x1 = 1000; int x05 = 500; int x02 = 200; int x01 = 100; int x005 = 50; int x001 = 10; int x0005 = 5; int x0002 = 2; int y = 0;
 		int number = 13765;
-		x5000 = number / 5000;
-		x2000 = number / 2000;
-		x1000 = number / 1000;
-		x500 = number / 500;
-		x200 = number / 200;
-		x100 = number / 100;
-		x50 = number / 50;
-		x10 = number / 10;
-		x5 = number / 5;
-		x2 = number / 2;
+		x5 = number / 5000; y = number - (x5*5000);
+		x2 = y / 2000; y = number - (x2*2000);
+		x1 = y / 1000; y = number - (x1*1000);
+		x05 = y / 500; y = number - (x05*500);
+		x02 = y / 200; y = number - (x02*200);
+		x01 = y / 100; y = number - (x01*100);
+		x005 = y / 50; y = number - (x005*50);
+		x001 = y / 10; y = number - (x001*10);
+		x0005 = y / 5; y = number - (x0005*5);
+		x0002 = y / 2; 
 
-System.out.println(x5000); 
-System.out.println(x2000); 
-System.out.println(x1000);
-System.out.println(x500);
-System.out.println(x100);
-System.out.println(x50);
-System.out.println(x10);
-System.out.println(x5);
-System.out.println(x2);
+System.out.println(x5); 
+System.out.println(x2); 
+System.out.println(x1);
+System.out.println(x05);
+System.out.println(x02);
+System.out.println(x01);
+System.out.println(x005);
+System.out.println(x001);
+System.out.println(x0005);
+System.out.println(x0002);
 	}
 }
