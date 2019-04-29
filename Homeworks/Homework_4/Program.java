@@ -4,20 +4,20 @@ public class Program {
         Scanner scanner = new Scanner(System.in);
 
         int currentDigit = 0;
-        int Digit =0;
+        int Digit = 0;
         int[]arr = new int[10];
 
         while (currentDigit != -1) {
             currentDigit = scanner.nextInt();
 
-            for ( ;currentDigit>0; currentDigit /=10){
-                Digit = currentDigit%10;
+            for (;currentDigit > 0; currentDigit /= 10){
+                Digit = currentDigit % 10;
                 arr[Digit]++;// arr[Digit]+1
                 while (currentDigit <= 0) {
                     currentDigit = scanner.nextInt();
 
-                    for ( ;currentDigit>0; currentDigit /=10){
-                        Digit = currentDigit%10;
+                    for (;currentDigit > 0; currentDigit /= 10){
+                        Digit = currentDigit % 10;
                         arr[Digit]++;// arr[Digit]+1
                     }
                 }
