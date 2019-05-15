@@ -11,9 +11,8 @@ class Program {
 	Scanner scanner = new Scanner(System.in);
 	int number = scanner.nextInt();
 
-	IsPrime isPrime = new IsPrime();
 
-	System.out.println(isPrime.isPrime(number));
+	System.out.println(isPrime(number));
 	}
 
 public static boolean isPrime(int number) {
