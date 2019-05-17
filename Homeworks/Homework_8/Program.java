@@ -10,7 +10,10 @@ class Program {
 
 	Scanner scanner = new Scanner(System.in);
 	int number = scanner.nextInt();
-	System.out.println(isPrime(number));
+
+	IsPrime isPrime = new IsPrime();
+
+	System.out.println(isPrime.isPrime(number));
 	}
 
 public static boolean isPrime(int number) {
