@@ -26,16 +26,25 @@ public class UsersRepository {
         }
     }
     public User findOneById(int id) {
-        User users = null;
+        User user = null;
         try {
             Reader reader = new FileReader("Users.txt");
             BufferedReader bufferedReader = new BufferedReader(reader);
             String currentUserLine = bufferedReader.readLine();
             String[] userData = currentUserLine.split("\\|");
-            String currentId = Integer.parseInt(userData[0]);
+            User currentId = Integer.parseInt(userData[0]);
             while (currentUserLine != null) {
                 userData = currentUserLine.split("\\|");
-                int idString = userData[0];
+
+                String idString = userData[0];
+                currentId = Integer.parseInt(userData[0]);
+                if (currentId == id) {
+                    user = currentId ;
+                    break;
+                }
+
+                // переводишь String в int, сравниваешь с исходым айди и дальше делаешь объект
+
                 String firstName = userData[1];
                 String lastName = userData[2];
                 String ageAsString = userData[3];
@@ -45,10 +54,10 @@ public class UsersRepository {
                 String password = userData[7];
                 UserRole role = UserRole.valueOf(userData[8]);
 
-                User user = User.builder()
+                user = User.builder()
                         .login(login)
                         .password(password)
-                        .id(idString)
+                        .id(Integer.parseInt(userData[0]))
                         .build();
 
                 if (!firstName.equals("null")) {
@@ -65,17 +74,13 @@ public class UsersRepository {
 
                 user.setRole(role);
 
-
-                currentId = (userData[0]);
                 currentUserLine = bufferedReader.readLine();
             }
         } catch (IOException e) {
             throw new IllegalArgumentException();
         }
-
-        return users;
+        return user;
     }
-}
 
 
     public User[] findAll() {
